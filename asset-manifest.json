@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dvmtask/static/css/main.929f99ea.css",
+    "main.js": "/dvmtask/static/js/main.f28edc4f.js",
+    "index.html": "/dvmtask/index.html",
+    "main.929f99ea.css.map": "/dvmtask/static/css/main.929f99ea.css.map",
+    "main.f28edc4f.js.map": "/dvmtask/static/js/main.f28edc4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.929f99ea.css",
+    "static/js/main.f28edc4f.js"
+  ]
+}
