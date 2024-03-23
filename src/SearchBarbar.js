@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 import "./SearchBarbar.css";
+import { useSearchContext } from "./SearchContext";
+import { SearchResults } from "./SearchResults";
 
 const url =
   "https://book-finder1.p.rapidapi.com/api/search?series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=25&page=1";
@@ -27,6 +29,8 @@ const x = (json) => {
 };
 
 export const SearchBarbar = ({ setResults, value }) => {
+  const { setSearchResults } = useSearchContext();
+
   const response = x(result.results);
   // console.log(response);
   React.useEffect(() => {
@@ -46,13 +50,15 @@ export const SearchBarbar = ({ setResults, value }) => {
       );
     });
     setResults(results);
+    setSearchResults(results);
+    // console.log(results);
   };
 
   return (
     <div className="searchbar-bar">
       <FaSearch id="search-icon" />
       <input
-        placeholder="Enter book name..."
+        placeholder="Enter book title..."
         className="searchbar-input"
         value={input}
         onChange={(e) => textChange(e.target.value)}

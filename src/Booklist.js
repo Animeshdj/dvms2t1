@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Book } from "./book";
 import { useFavoriteContext } from "./FavoriteContext";
-
+import { useSearchContext } from "./SearchContext";
 const url =
   "https://book-finder1.p.rapidapi.com/api/search?series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=25&page=1";
 const options = {
@@ -18,8 +18,14 @@ const result = await response.json();
 
 const Booklist = () => {
   const { favoriteBooks, showFavorites } = useFavoriteContext();
+  const { searchResults } = useSearchContext();
 
-  const filteredBooks = showFavorites ? favoriteBooks : result.results;
+  let filteredBooks = showFavorites
+    ? favoriteBooks
+    : searchResults.length === 0
+    ? result.results
+    : searchResults;
+
   return (
     <div className="booklist">
       {filteredBooks.map((book, index) => (

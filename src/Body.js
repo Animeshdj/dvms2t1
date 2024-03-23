@@ -1,11 +1,11 @@
 import React from "react";
 import "./Body.css";
 import Booklist from "./Booklist";
-const Body = ({ favoritebtn }) => {
+const Body = () => {
   return (
     <>
       <div className="body-main">
-        <Booklist favoritebtn={favoritebtn} />
+        <Booklist />
       </div>
     </>
   );

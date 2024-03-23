@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./SearchResults.css";
 
-export const SearchResults = ({ results, setValue, onReceiveData }) => {
-  const [svalue, setSvalue] = useState("");
+export const SearchResults = ({ results, onReceiveData }) => {
   const handleChange = (e) => {
     // console.log(e);
     // setValue(() => e);
