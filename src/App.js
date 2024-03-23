@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Body from "./Body.js";
+import Nav from "./Nav.js";
+import { useState } from "react";
 
 function App() {
+  const [favoritebtn, setFavoritebtn] = useState();
+  const somename = (e) => {
+    setFavoritebtn(e);
+    console.log(somename);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav onReceiveDatafbtn={somename} />
+      <Body favoritebtn={favoritebtn} />
+    </>
   );
 }
 

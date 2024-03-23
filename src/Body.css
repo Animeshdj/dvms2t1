@@ -1,0 +1,129 @@
+.body-main {
+  width: 90%;
+  background-color: #fff;
+  /* background-color: #378ce7; */
+  margin: 10px 5%;
+  border-radius: 100px;
+}
+
+.booklist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin: 2%; */
+  width: 20%;
+  margin: 2% 2.5%;
+  align-items: center;
+  /* padding-left: 2%; */
+  line-height: 1.5;
+  background-color: #ddd;
+  border-radius: 15%;
+  border: solid 5px #000;
+  transition: all 100ms ease;
+}
+
+.book:nth-of-type(1),
+.book:nth-of-type(2),
+.book:nth-of-type(3),
+.book:nth-of-type(4) {
+  margin-top: 3%;
+}
+
+.book img {
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.book div:last-of-type {
+  margin-bottom: 10px;
+}
+
+.book:hover {
+  background-color: #eee;
+  border-color: #eee;
+}
+
+.book div {
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  transition: all 200ms ease-out;
+}
+
+.book .title-div {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.book div:hover {
+  color: rgb(0, 168, 146);
+}
+
+.title-div:hover {
+  padding-left: 5px;
+  transition: all 100ms ease-out;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+
+.book-checkbox {
+  /* position: absolute; */
+  top: 0%;
+  left: 10%;
+  height: 32px;
+  aspect-ratio: 1;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 900px) {
+  .book img {
+    display: none;
+  }
+
+  .book .title-div {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .book div {
+    font-size: 14px;
+  }
+
+  .book-checkbox {
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .book img {
+    display: none;
+  }
+
+  .book .title-div {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .book div {
+    font-size: 12px;
+  }
+
+  .book-checkbox {
+    height: 12px;
+  }
+}

@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f1f5f8;
+  /* background: #5356ff; */
+  color: #222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-bar {
+  width: 90%;
+  height: 200px;
+  margin: 0 5%;
+  background-color: #fff;
+  /* background-color: #378ce7; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0 0 100px 100px;
+}
+
+.nav-1,
+.nav-3 {
+  margin: auto;
+  width: 25%;
+  text-align: center;
+  font-size: 22px;
+  height: 50%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-2 {
+  width: 50%;
+  min-width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-1 a {
+  text-decoration: none;
+  font-size: 40px;
+  color: #000;
+  transition: all 125ms ease-in;
+}
+
+.nav-1 a:hover {
+  cursor: pointer;
+  color: lime;
+}
+
+.nav-3 #checkbox {
+  display: none;
+}
+
+.nav-3 form {
+  width: 50%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+.nav-3 form label {
+  height: 100%;
+  width: 100%;
+  /* padding-top: 13px; */
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  border: solid 1px black;
+  transition: all 75ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-3 form #checkbox:checked + label {
+  background-color: gray;
+  border: 1px solid va;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-3 form {
+    font-size: 24px;
+    height: 66%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 900px) {
+  .nav-3 form {
+    font-size: 18px;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .nav-2 .sb-container {
+    display: none;
+  }
+
+  .nav-3 form {
+    font-size: 12px;
+    height: 25%;
+  }
+
+  .nav-1 a {
+    font-size: 20px;
   }
 }
