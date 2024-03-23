@@ -1,26 +1,19 @@
 import React from "react";
+import { useFavoriteContext } from "./FavoriteContext";
 
-let fbtna = true;
-export const Favoritebtn = (props) => {
-  const { isfavoritedown } = props;
-  const testfunc = () => {
-    if (fbtna == true) {
-      isfavoritedown(true);
-      fbtna = false;
-    } else {
-      isfavoritedown(false);
-      fbtna = true;
-    }
-    // isfavoritedown(1);
-  };
+export const Favoritebtn = () => {
+  const { showFavorites, toggleShowFavorites } = useFavoriteContext();
+
   return (
     <div className="nav-3">
-      <form>
-        <input type="checkbox" id="checkbox" />
-        <label htmlFor="checkbox" onClick={() => testfunc()}>
-          Favorites
-        </label>
-      </form>
+      <label>
+        <input
+          type="checkbox"
+          checked={showFavorites}
+          onChange={toggleShowFavorites}
+        />
+        Favorites
+      </label>
     </div>
   );
 };

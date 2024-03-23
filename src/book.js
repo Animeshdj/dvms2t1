@@ -1,4 +1,11 @@
+import { useFavoriteContext } from "./FavoriteContext";
 export const Book = (props) => {
+  const { toggleFavorite, favoriteBooks } = useFavoriteContext();
+
+  const handleToggleFavorite = () => {
+    toggleFavorite(props);
+  };
+
   const {
     book_type,
     title,
@@ -7,12 +14,8 @@ export const Book = (props) => {
     series_name,
     published_works,
   } = props;
-  let isFavorite = false;
-  const changeFavorite = () => {
-    if (isFavorite != true) isFavorite = true;
-    else isFavorite = false;
-    console.log(isFavorite);
-  };
+  const isFavorite = favoriteBooks.some((book) => book.title === title);
+
   return (
     <article className="book">
       <img src={published_works[0].cover_art_url} alt="" />
@@ -26,7 +29,8 @@ export const Book = (props) => {
         <input
           type="checkbox"
           className="book-checkbox"
-          onClick={() => changeFavorite()}
+          checked={isFavorite}
+          onChange={handleToggleFavorite}
         />
       </div>
     </article>

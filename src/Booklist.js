@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Book } from "./book";
+import { useFavoriteContext } from "./FavoriteContext";
 import { SearchBarbar } from "./SearchBarbar";
 // import Nav from "./Nav";
 // import { result } from "./fetch";
@@ -20,15 +21,22 @@ const result = await response.json();
 
 // const [id, setId] = useState([]);
 
-const Booklist = ({ favoritebtn }) => {
-  // console.log(favoritebtn);
-  return (
+const Booklist = () => {
+  const { favoriteBooks, showFavorites } = useFavoriteContext();
+
+  const filteredBooks = showFavorites
+  ? favoriteBooks
+  : result.results.filter(
+      (book) => !favoriteBooks.some((favBook) => favBook.title === book.title)
+    );
+    return (
     <div className="booklist">
-      {result.results.map((book, index) => {
-        return <Book {...book} key={index} isFavorite={false} />;
-      })}
+      {filteredBooks.map((book, index) => (
+        <Book {...book} key={index}/>
+      ))}
     </div>
   );
 };
 
 export default Booklist;
+
