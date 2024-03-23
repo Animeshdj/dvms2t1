@@ -6,14 +6,16 @@ export const Favoritebtn = () => {
 
   return (
     <div className="nav-3">
-      <label>
-        <input
-          type="checkbox"
-          checked={showFavorites}
-          onChange={toggleShowFavorites}
-        />
-        Favorites
-      </label>
+      <form>
+        <label>
+          <input
+            type="checkbox"
+            checked={showFavorites}
+            onChange={toggleShowFavorites}
+          />
+          Favorites
+        </label>
+      </form>
     </div>
   );
 };

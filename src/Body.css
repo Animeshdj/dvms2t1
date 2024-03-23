@@ -1,6 +1,6 @@
 .body-main {
   width: 90%;
-  background-color: #fff;
+  background-color: #c7d4d3;
   /* background-color: #378ce7; */
   margin: 10px 5%;
   border-radius: 100px;
@@ -23,9 +23,9 @@
   align-items: center;
   /* padding-left: 2%; */
   line-height: 1.5;
-  background-color: #ddd;
+  background-color: #9cbe9b;
   border-radius: 15%;
-  border: solid 5px #000;
+  border: solid 5px #adbcb4;
   transition: all 100ms ease;
 }
 
@@ -47,8 +47,8 @@
 }
 
 .book:hover {
-  background-color: #eee;
-  border-color: #eee;
+  background-color: #8dc97e;
+  border-color: #cee7e6;
 }
 
 .book div {
