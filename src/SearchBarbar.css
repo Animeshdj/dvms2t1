@@ -17,3 +17,12 @@
   font-size: 1.75rem;
   width: 100%;
 }
+
+@media screen and (max-width: 650px) {
+  .searchbar-bar {
+    height: 2rem;
+  }
+  .searchbar-input {
+    font-size: 1rem;
+  }
+}

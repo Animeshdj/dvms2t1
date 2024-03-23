@@ -24,7 +24,7 @@
   /* padding-left: 2%; */
   line-height: 1.5;
   background-color: #9cbe9b;
-  border-radius: 15%;
+  border-radius: 50px;
   border: solid 5px #adbcb4;
   transition: all 100ms ease;
 }
@@ -104,6 +104,10 @@
   .book-checkbox {
     height: 16px;
   }
+
+  .summary p {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -122,5 +126,9 @@
 
   .book-checkbox {
     height: 12px;
+  }
+
+  .summary {
+    display: none;
   }
 }
