@@ -13,7 +13,7 @@ export const Favoritebtn = () => {
             checked={showFavorites}
             onChange={toggleShowFavorites}
           />
-          Favorites
+          <div className="favorite-btn">Favorites</div>
         </label>
       </form>
     </div>

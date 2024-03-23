@@ -112,7 +112,7 @@
 
 @media screen and (max-width: 650px) {
   .book img {
-    display: none;
+    display: inline;
   }
 
   .book .title-div {
@@ -128,7 +128,12 @@
     height: 12px;
   }
 
-  .summary {
+  /* .summary {
     display: none;
+  } */
+
+  .book {
+    width: 90%;
+    margin: 5% 5%;
   }
 }

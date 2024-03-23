@@ -21,8 +21,9 @@
 @media screen and (max-width: 650px) {
   .searchbar-bar {
     height: 2rem;
+    width: 50%;
   }
   .searchbar-input {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 }
