@@ -28,10 +28,13 @@ export const SearchBarbar = ({ setResults, value }) => {
     };
 
     if (input) {
-      fetchData().then((data) => {
-        setSearchBarResults(data);
-        // console.log(searchBarResults);
-      });
+      const timeout = setTimeout(() => {
+        fetchData().then((data) => {
+          setSearchBarResults(data);
+          // console.log(searchBarResults);
+        });
+      }, 300);
+      return () => clearTimeout(timeout);
     }
   }, [input]);
 
