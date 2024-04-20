@@ -2,8 +2,7 @@ import React from "react";
 import { Book } from "./book";
 import { useFavoriteContext } from "./FavoriteContext";
 import { useSearchContext } from "./SearchContext";
-const url =
-  "https://book-finder1.p.rapidapi.com/api/search?series=Wings%20of%20fire&book_type=Fiction&lexile_min=600&lexile_max=800&results_per_page=25&page=1";
+const url = "https://book-finder1.p.rapidapi.com/api/search";
 const options = {
   method: "GET",
   headers: {
@@ -23,8 +22,8 @@ const Booklist = () => {
   let filteredBooks = showFavorites
     ? favoriteBooks
     : searchResults.length === 0
-    ? result.results
-    : searchResults;
+    ? (result && result.results) || []
+    : (searchResults && searchResults.results) || [];
 
   return (
     <div className="booklist">
