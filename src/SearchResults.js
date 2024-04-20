@@ -1,7 +1,17 @@
 import React, { useState } from "react";
+import { useSearchContext } from "./SearchContext";
 import "./SearchResults.css";
 
-export const SearchResults = ({ results, onReceiveData }) => {
+export const SearchResults = ({ onReceiveData }) => {
+  const { searchResults } = useSearchContext();
+
+  if (
+    !searchResults ||
+    !searchResults.results ||
+    !Array.isArray(searchResults.results)
+  ) {
+    return null; // or render a loading state or an empty message
+  }
   const handleChange = (e) => {
     // console.log(e);
     // setValue(() => e);
@@ -11,7 +21,7 @@ export const SearchResults = ({ results, onReceiveData }) => {
   };
   return (
     <div className="results-list">
-      {results.map((result, id) => {
+      {searchResults.results.map((result, id) => {
         // const ChangeValue = ({ result }) => {
         //   //   props.resultClicked(result.title);
         //   console.log({ result });

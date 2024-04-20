@@ -1,7 +1,7 @@
 .results-list {
   width: 100%;
   background-color: #f1f1f1;
-  display: flex;
+  display: none;
   flex-direction: column;
   text-align: start;
   border-radius: 10px;
@@ -28,6 +28,10 @@
 
 .results-list::-webkit-scrollbar-thumb {
   background-color: #000;
+}
+
+.searchbar-bar:focus-within + .results-list {
+  display: flex;
 }
 
 @media screen and (max-width: 650px) {

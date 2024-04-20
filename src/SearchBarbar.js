@@ -30,7 +30,7 @@ export const SearchBarbar = ({ setResults, value }) => {
     if (input) {
       fetchData().then((data) => {
         setSearchBarResults(data);
-        console.log(searchBarResults);
+        // console.log(searchBarResults);
       });
     }
   }, [input]);
